@@ -16,15 +16,15 @@ export default function DonationForm( {donations} ) {
         id="caption"
         name="caption"
         type="text"
-        placeholder="Add a brief message..." />'
+        placeholder="Add a brief message..." />
     </label>
     <label htmlFor="amount"
       >Amount<input
         id="amount"
         name="amount"
         type="number"
-        placeholder="0" /></label
-    ><button>Donate!</button>
+        placeholder="0" /></label>
+    <button>Donate!</button>
   </form>
 </section>
   );

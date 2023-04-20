@@ -1,9 +1,9 @@
-export default function Progress({totalSoFar}) {
+export default function Progress(props) {
   return (
     <section className="progress">
   <h2>
-    Raised <span className="secondary">${totalSoFar}</span> of
-    <span className="secondary"> $1000</span>
+    Raised <span className="secondary">${props.totalSoFar}</span> of
+    <span className="secondary"> ${props.targetAmount}</span>
   </h2>
 </section>
   );
