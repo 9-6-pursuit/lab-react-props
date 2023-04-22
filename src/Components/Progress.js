@@ -1,8 +1,6 @@
-export default function Progress({donations, target}) {
+export default function Progress({donations, target}){
   let total = 0
-  donations.forEach(donation => {
-    total += donation.amount
-  })
+  donations.forEach(donation => total += donation.amount)
   return (
     <section className="progress">
       <h2>
