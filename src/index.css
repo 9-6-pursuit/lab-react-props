@@ -24,6 +24,7 @@ h6 {
 
 /* Heading */
 header {
+  /* border: 1px solid rgb(240, 7, 7); */
   background: var(--dark);
   border-bottom: 3px solid var(--primary);
   color: var(--light);
@@ -32,6 +33,7 @@ header {
 }
 
 header h1 {
+  /* border: 1px solid rgb(240, 7, 7); */
   font-size: 42px;
   font-weight: 300;
 }
@@ -39,14 +41,18 @@ header h1 {
 header h1 span {
   color: var(--primary);
   font-weight: 700;
+  /* border: 1px solid rgb(240, 7, 7); */
 }
 
 header p {
+  /* border: 1px solid rgb(240, 7, 7); */
   font-style: italic;
+  color: aquamarine;
 }
 
 /* Main section */
 .container {
+  /* border: 1px solid rgb(73, 240, 7); */
   display: grid;
   gap: 25px;
   grid-template-columns: 1fr 2fr;
@@ -56,23 +62,37 @@ header p {
 
 /* Sidebar */
 .sidebar {
+  /* border: 1px solid rgb(89, 7, 240); */
   background: var(--light);
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
 }
 
 .sidebar ul {
+  /* border: 1px solid rgb(240, 174, 7); */
   padding: 0;
+  padding-block-end: 10px;
   list-style: none;
+  font-size: small;
+  color: #2f9c95;
+  /* color: var(--dark); */
 }
 
+/* .donation name 
+.donation body{
+  color: var(--primary);
+  color: var(--dark);
+} */
+
 .sidebar ul li {
+  /* border: 1px solid rgb(240, 7, 7); */
   display: block;
   padding: 10px;
 }
 
 .sidebar ul li span {
+  /* border: 1px solid rgb(240, 7, 232); */
   color: var(--primary);
   display: block;
   font-family: "Roboto", sans-serif;
@@ -86,21 +106,24 @@ header p {
 
 .secondary {
   color: var(--secondary);
+  /* border: 1px solid rgb(240, 7, 232); */
 }
 
 /* Donation Form */
-.donation input[type="text"],
-.donation input[type="number"] {
+.donation-form input[type="text"],
+.donation-form input[type="number"] {
   display: block;
+  /* border: 1px solid rgb(240, 7, 232); */
   margin: 10px 0;
-  padding: 5px;
+  color: var(--dark);
 }
 
-.donation input[type="submit"],
-.donation button {
+.donation-form input[type="submit"],
+.donation-form button {
   background: var(--primary);
   font-weight: bold;
   padding: 10px;
+  color: white;
 }
 
 @media (max-width: 950px) {

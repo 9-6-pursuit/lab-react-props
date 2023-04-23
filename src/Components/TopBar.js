@@ -24,5 +24,5 @@ export default function TopBar() {
       <p>{message}</p>
     </header>
   );
-}
+}   
 

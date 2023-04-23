@@ -2,8 +2,6 @@
 //   return null;
 // }
 
-
-//#2
 import { donations } from "./RecentDonations"
 import { Donation } from "./RecentDonations"
 import { listDonation } from "./RecentDonations"
@@ -14,27 +12,27 @@ export default function DonationForm() {
       donations.length + 1
     }!</span></h3>
     <form>
-      <label htmlFor="name">Name
+      <label htmlFor="name">Name<br></br>
         <input
           id="name"
           name="name"
           type="text"
           placeholder="Your name..." />
       </label>
-      <label htmlFor="caption">Caption
+      <label htmlFor="caption"><br></br>Caption<br></br>
         <input
           id="caption"
           name="caption"
           type="text"
           placeholder="Add a brief message..." />
       </label>
-      <label htmlFor="amount">Amount
+      <label htmlFor="amount"><br></br>Amount<br></br>
         <input
           id="amount"
           name="amount"
           type="number"
           placeholder="0" />
-      </label>
+      </label><br></br>
       <button type="submit" id="submit-donation" onClick={() => {
         let name = document.getElementById('name')
         let amount = document.getElementById('amount')
