@@ -1,6 +1,9 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
 import "./App.css";
+import DonationForm from "./Components/DonationForm";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
 
 const targetAmount = 1000;
 const donations = [
@@ -36,15 +39,31 @@ const donations = [
   },
 ];
 
+let totalSoFar = 0
+for (let donation of donations) {
+  totalSoFar += donation.amount;
+}
+
 function App() {
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">
+          {/* for each component, I added props to be used in the component. I was able to take the variables listed above and turn them into props using curly braces. */}
+          <RecentDonations 
+          donations = {donations}/>
+          </section>
         <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+          <Progress 
+            totalSoFar = {totalSoFar}
+            targetAmount = {targetAmount} />
+          <DonationForm 
+            donations = {donations}
+            name = {donations.name}
+            amount = {donations.amount}
+            caption = {donations.caption}
+            />
         </section>
       </main>
     </>
