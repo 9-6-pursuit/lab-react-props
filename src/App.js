@@ -1,10 +1,43 @@
 import React from "react";
 import TopBar from "./Components/TopBar";
+import DonationForm from "./Components/DonationForm";
+import RecentDonations from "./Components/RecentDonations";
+import App from "./Components/Apps";
+const targetAmount = 1000;
 import "./App.css";
 
-const targetAmount = 1000;
-const donations = [
-  {
+
+function App (){
+const myArray = [ amount, caption, id, name];
+return (
+  <div className = "sidebar" ><h2>RecentDonations</h2>
+  {myArray.map (name =>(
+    <li>
+      {name}
+      {donations}
+      {caption}
+    </li>
+  ))}
+  
+  </div>
+);
+  }
+export default App;
+
+
+//   data.forEach (donations => {
+//     for (let [key, value] of Object.entries(donations))
+//     if (result [key]){
+//       result [key] +=value;
+//     }else {
+//       result [key] = value;
+//     }
+//     }
+//   )}
+// }
+//   console.log(key, value) 
+  
+//   {
     amount: 250,
     caption: "You really need this. Really.",
     id: 1,
@@ -34,21 +67,25 @@ const donations = [
     id: 5,
     name: "Sam",
   },
+
 ];
+
 
 function App() {
   return (
-    <>
+  <div>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
-        <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+        <section className="sidebar">
+          <h2> Recent Donations </h2></section>
+        <section className="main">
+          <h2> Progress </h2>
+          <h3> Donation Form </h3>
         </section>
       </main>
     </>
-  );
+  );</div>
+  </div>
 }
 
 export default App;
