@@ -1,14 +1,11 @@
 export default function Progress({donations, targetAmount}) {
-  const donationMade = donations => {
-    let total = 0;
-    donations.forEach(donation => total += donation.amount);
-    return total;
-  }
+  let totalDonation = 0;
+  donations.forEach(donation => totalDonation += donation.amount);
 
   return (
     <section className="progress">
       <h2>
-        Raised <span className="secondary">${donationMade(donations)}</span> of
+        Raised <span className="secondary">${totalDonation}</span> of
         <span className="secondary"> ${targetAmount}</span>
       </h2>
     </section>
