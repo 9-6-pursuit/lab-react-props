@@ -50,14 +50,20 @@ function App() {
       <TopBar />
       <main className="container">
         <section className="sidebar">
-          <RecentDonations />
+          {/* for each component, I added props to be used in the component. I was able to take the variables listed above and turn them into props using curly braces. */}
+          <RecentDonations 
+          donations = {donations}/>
           </section>
         <section className="">
           <Progress 
             totalSoFar = {totalSoFar}
             targetAmount = {targetAmount} />
           <DonationForm 
-            donations = {donations} />
+            donations = {donations}
+            name = {donations.name}
+            amount = {donations.amount}
+            caption = {donations.caption}
+            />
         </section>
       </main>
     </>

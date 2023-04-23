@@ -1,4 +1,4 @@
-export default function DonationForm( {donations} ) {
+export default function DonationForm({donations}) {
   
   return (
     <section className="donation">
@@ -23,8 +23,8 @@ export default function DonationForm( {donations} ) {
         id="amount"
         name="amount"
         type="number"
-        placeholder="0" /></label>
-    <button>Donate!</button>
+        placeholder="0" /></label
+    ><button>Donate!</button>
   </form>
 </section>
   );
