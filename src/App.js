@@ -3,7 +3,7 @@ import TopBar from "./Components/TopBar";
 import "./App.css";
 import DonationForm from "./Components/DonationForm";
 import Progress from "./Components/Progress";
-
+import RecentDonations from "./Components/RecentDonations";
 const targetAmount = 1000;
 const donations = [
   {
@@ -38,15 +38,30 @@ const donations = [
   },
 ];
 
+let total =0
+
+for (const a of donations){
+   total +=a.amount
+}
+
+
+
+  
+  
+  
 function App() {
   return (
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">{/* Recent Donations */}
+        
+        <RecentDonations />
+        </section>
         <section className="">
           {/* Progress */}
-          <Progress />
+          <Progress raised = {total}
+            />
 
 
           {/* Donation Form */}
