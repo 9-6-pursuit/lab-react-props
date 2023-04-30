@@ -1,9 +1,12 @@
 import React from "react";
+import DonationForm from "./Components/DonationForm";
+import Progress from "./Components/Progress";
+import RecentDonations from "./Components/RecentDonations";
 import TopBar from "./Components/TopBar";
 import "./App.css";
 
-const targetAmount = 1000;
-const donations = [
+const targetAmount = 1000; // will serve as a prop to pass info from the App component to the Progress component
+const donations = [ // will serve as a prop to pass info from the App component to the RecentDonations and Progress components
   {
     amount: 250,
     caption: "You really need this. Really.",
@@ -41,10 +44,12 @@ function App() {
     <>
       <TopBar />
       <main className="container">
-        <section className="sidebar">{/* Recent Donations */}</section>
+        <section className="sidebar">
+          <RecentDonations donations={donations} />
+          </section>
         <section className="">
-          {/* Progress */}
-          {/* Donation Form */}
+          <Progress donations={donations} targetAmount={targetAmount}/>
+          <DonationForm donations={donations} />
         </section>
       </main>
     </>
