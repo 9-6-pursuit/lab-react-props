@@ -1,116 +1,118 @@
-# React Props Lab
+[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
-Pass props through multiple components to build a mockup of a "FundMe"-type website.
+# Bird Sanctuary
 
-![Image of completed application.](./assets/mockup.png)
+## Getting Started
 
----
+- Fork this repo
+- Clone the forked repository
+- `cd` to the directory where you cloned it
+- `npm install` to install dependencies
+- `npm run cypress` to open the cypress testing window
 
-## Lab Setup
+> _Note_: Remember to `git add`, `git commit` and `git push` regularly
 
-### Getting started
+## Submission Guidelines
 
-1. Fork and clone this repository.
+- When finished, commit and push your work.
+- Make a pull request on github.
+- Submit the link to your pull request on Canvas.
 
-1. Navigate to the cloned repository's directory on your command line. Then, run the following command:
+This project is designed to assess the React skills you have gained so far.
 
-   ```
-   npm install
-   ```
+There are 7 features that need to be implemented. Each completed function (passes all the tests) will be worth 1 point.
 
-   This will install the libraries needed to run the tests.
+A minium of 5 points must be attained in order to pass this assessment.
 
-1. Open up the repository in VSCode. Follow the instructions below to complete the Lab.
+You may receive partial credit (0.5 points) for code that is close to passing the tests, but does not pass all the tests.
 
-### Tests
+## Assessment Details
 
-To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
+Create a bird sanctuary donation app that meets the user stories below.
 
-```
-npm test
-```
+**The birds are in the array in `src/data/birds.js` and the bonus itesms are in `src/data/bonusItems.js`. Import these and pass them to your components. Use these items and do not change any information in the array, or else the tests will fail.**
 
-This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
+The following demo has been styled for clarity. You do not need to style this app.
 
-#### Testing Tips
+![demo gif](./assets/bird-sanctuary.gif)
 
-Keep the following in mind for this lab as you run the tests.
+## User Stories
 
-1. While running your tests, you must have a server up and running in another terminal. This means you will have _both_ a terminal window running the actual React application _and_ a terminal window running the tests.
+1. I can see sections with birds, that have a name, image, amount and adopt button.
+1. I can add birds to the shopping cart.
+1. I can see a total cost of the birds in my cart.
+1. I can get a 10% discount if I have 3 or more birds in my cart
+1. I can get a series of bonus items for increasing cart totals
+1. I can use a form to checkout my cart, upon checkout, it resets my cart
+1. I can delete a bird from my cart
 
-1. When creating a component, make sure to create and import it with the same name as the file name. For example, the component created and exported inside of the `Post.js` file should be `Post`. The tests look for these specific names.
+## Acceptance criteria and tests
 
-1. While the `cypress-watch-and-reload` package has been installed in this project, sometimes the React application will take longer to reload than the tests. If you feel as though a test should be passing that isn't, try pressing the re-run button in the Cypress tests before asking for help.
+The acceptance criteria below are covered by unit tests. Notice that there are some important details about the exact text, classes, or HTML tags you'll need to use in order to pass the tests.
 
-## Instructions
+Your react app should be made up of a minimum of 3 components:
 
-Inside of the `App.js` file are two variables which will serve as props for your application:
+- bird card(s)
+- checkout
+- cart
 
-1. `targetAmount`: A number, in dollars, that represents the total amount of money attempting to be raised.
+### Birds
 
-1. `donations`: An array of objects, where each object represents a donation.
+- The bird data comes from `src/data/birds.js`
+- Each bird card displays the name, image, and amount (price)
+- Each bird card has a class name of `card`
+- Each bird card has an `Adopt` button
+  - The button text should be: `Adopt`
 
-Create each component in the `Components/` directory and pass props from the `App` component to each of the components to create the mockup as seen above. HTML snippets for each component is included below.
+### Cart
 
-### Components
+- The cart has a class name of `Cart`
+- When I click on a bird card's adopt button, its name appears in the cart as an `<ol>` list item.
+- The total shows up as an `<h4>` element inside the cart
+- When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
+- When there are less than 3 birds in the cart there is a 0% discount
+- When there are 3 or more birds in the cart there is a 10% discount
 
-Each of the components below must be completed and must make use of props. A "hardcoded" HTML snippet is included below so that you can focus on passing props as opposed to creating HTML. _Do not_ just copy and paste the HTML into the component and update the text. While this may pass the tests, it does not demonstrate you know anything about props.
+The bonuses come from `src/data/bonusItems.js`
 
-#### DonationForm
+- The bonus items are added as list items in an `<ul>` list item as follows:
+- 1 bonus (first array item) is given if the total is between 100 and 300
+- 2 bonuses (first and second array items) are given if the total is between 300 and 500
+- 3 bonuses are given if the total is between 500 and 1000
+- 4 bonuses are given if the total is more than 1000
 
-For the donation form, you will need to update the sentence "You could be donation #1!" so that instead of being hardcoded to the number `1`, it is set to a number one above the actual number of donations.
+### Checkout
 
-```html
-<section className="donation">
-  <h3>You could be donation <span class="secondary">#1!</span></h3>
-  <form>
-    <label htmlFor="name"
-      >Name<input
-        id="name"
-        name="name"
-        type="text"
-        placeholder="Your name..." /></label
-    ><label htmlFor="caption"
-      >Caption<input
-        id="caption"
-        name="caption"
-        type="text"
-        placeholder="Add a brief message..." /></label
-    ><label htmlFor="amount"
-      >Amount<input
-        id="amount"
-        name="amount"
-        type="number"
-        placeholder="0" /></label
-    ><button>Donate!</button>
-  </form>
-</section>
-```
+- I can complete the inputs in the checkout form.
+- When I complete the form with valid input and click `Submit`, an alert tells me the purchase was successful.
+  - Alert text should include: `You have adopted birds. Thank you!`
+- When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
-### Progress
+## Help and tips
 
-For the progress section, you will need to replace the value `$0` with a dynamic value based on the donations.
+- Before you write any code, think about your component structure.
 
-```html
-<section className="progress">
-  <h2>
-    Raised <span className="secondary">$0</span> of
-    <span className="secondary">$1000</span>
-  </h2>
-</section>
-```
+  - What components will you need to represent the parts of the app?
+  - Which components will need to have state?
+  - Which components will need to know about the state of **other components**?
+  - Which components will need to get props (data or callbacks) from another component?
+  - Which components will be rendered by other components?
+  - Draw out your component structure. Check your drawing against the user stories. Will you be able to implement all of the stories with this structure?
 
-### Recent Donations
+- If your tests are failing, read the acceptance criteria closely. Some tests expect you to use specific text, classes, or HTML elements.
 
-For the recent donations section, you will need to have a number of `li` elements equal to the number of donations. Each `li` should include the person who donated, the amount, and their caption.
+## Academic Integrity
 
-```html
-<section>
-  <h2>Recent Donations</h2>
-  <ul>
-    <li><span>Jo donated $25</span>You really need this. Really.</li>
-    <li><span>Rami donated $10</span>Here, take a break from work!</li>
-    <!-- etc... -->
-  </ul>
-</section>
-```
+This project is to help you assess your progress in learning React.
+
+- Do this project **on your own**.
+  - Do not pair programwith other fellows or submit one project for more than one person .
+  - Do not refer to work from other (current or former) fellows.
+  - Do not ask individuals outside the program for help.
+- You can refer to any notes that you have.
+- You can talk to other students and use slack to help work out bugs.
+- You can go to office hours
+- You can Google anything you want, but do not copy any code that you do not understand.
+- Your instructors are here to help you with technical difficulties.
+  - Make sure that the tests are running on your computer. If not, tell an instructor ASAP.
+  - Make sure that you can fork and clone the repo and run the app. If not, tell an instructor ASAP.

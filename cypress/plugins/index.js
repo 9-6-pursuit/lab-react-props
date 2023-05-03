@@ -15,7 +15,8 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-module.exports = (on, config) => {
+// eslint-disable-next-line no-unused-vars
+module.exports = (_on, config) => {
   require("cypress-watch-and-reload/plugins")(config);
   return config;
 };
