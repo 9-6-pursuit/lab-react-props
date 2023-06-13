@@ -1,10 +1,12 @@
 export default function TopBar() {
   return (
-    <header>
+ <header>
       <h1>
         GoFund<span>Me</span>
       </h1>
-      <p>Help me go on a vacation to a beach somewhere!</p>
+      <p>(message)</p>
     </header>
   );
 }
+
+
